@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.petersonnormil.lil.learningspring.data.repository.entity.Room;
 import com.petersonnormil.lil.learningspring.data.repository.entity.Guest;
+import com.petersonnormil.lil.learningspring.data.repository.entity.Reservation;
 import com.petersonnormil.lil.learningspring.data.repository.RoomRepository;
 import com.petersonnormil.lil.learningspring.data.repository.GuestRepository;
+import com.petersonnormil.lil.learningspring.data.repository.ReservationRepository;
 
 @SpringBootApplication
 public class LearningSpringApplication {
@@ -41,6 +43,18 @@ public class LearningSpringApplication {
 			@GetMapping
 			public Iterable<Guest> getGuests(){
 				return this.guestRepository.findAll();
+			}
+		}
+		
+		@RestController
+		@RequestMapping("/reservations")
+		public class ReservationController{
+			@Autowired
+			private ReservationRepository reservationRepository;
+			
+			@GetMapping
+			public Iterable<Reservation> getGuests(){
+				return this.reservationRepository.findAll();
 			}
 		}
 		
