@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.petersonnormil.lil.learningspring.data.repository.entity.*;
 
 @Repository
-public interface RoomRepository extends CrudRepository<Room, Long> {
+public interface RoomRepository extends CrudRepository<Room, Long> { //Long is uppercase because its of type class
 
 }
